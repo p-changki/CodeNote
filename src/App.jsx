@@ -27,9 +27,7 @@ function App() {
           <p className="noTodo">투두리스트가 없습니다.</p>
         ) : (
           <ul className="todoList">
-            {todos.map((text, index) => (
-              <li key={index} text={text}></li>
-            ))}
+            <todoItems todos={todos} />
           </ul>
         )}
       </section>

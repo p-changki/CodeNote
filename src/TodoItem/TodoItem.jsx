@@ -1,3 +1,11 @@
-export function TodoItem({ text }) {
-  return <li className="todoItem">{text}</li>;
+export function TodoItem({ todos }) {
+  return (
+    <>
+      {todos.map((todo, index) => (
+        <li key={index} className="todoItem">
+          {todo}
+        </li>
+      ))}
+    </>
+  );
 }
