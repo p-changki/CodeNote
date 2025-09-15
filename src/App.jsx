@@ -35,8 +35,7 @@ function App() {
   const handleDelete = (todoId) => {
     setTodos((prev) => prev.filter((todo) => todo.id !== todoId));
   };
-
-  const handleToogle = (todoId) => {
+  const handleToggle = (todoId) => {
     setTodos((prev) =>
       prev.map((todo) =>
         todo.id === todoId ? { ...todo, isDone: !todo.isDone } : todo
@@ -52,7 +51,7 @@ function App() {
           오늘은 {new Date().toLocaleDateString()} 입니다.
         </p>
       </div>
-      <panel>
+      <Panel>
         <div className={style.inputSection}>
           <input
             type="text"
@@ -66,8 +65,8 @@ function App() {
             추가
           </button>
         </div>
-      </panel>
-      <panel>
+      </Panel>
+      <Panel>
         {todos.length === 0 ? (
           <p className={style.no - todos}>할 일이 없습니다.</p>
         ) : (
@@ -76,13 +75,13 @@ function App() {
               <TodoItem
                 key={todo.id}
                 todo={todo}
-                onToggle={handleToogle}
+                onToggle={handleToggle}
                 onDelete={handleDelete}
               />
             ))}
           </ul>
         )}
-      </panel>
+      </Panel>
     </div>
   );
 }
