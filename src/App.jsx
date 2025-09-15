@@ -1,5 +1,6 @@
 import "./App.css";
 import { TodoItem } from "./components/TodoItem";
+import { Panel } from "./components/Panel";
 
 function App() {
   const title = "오늘의 할일";
@@ -13,21 +14,23 @@ function App() {
           오늘은 {new Date().toLocaleDateString()} 입니다.
         </p>
       </div>
-      <section className="input-section">
-        <input type="text" placeholder="새로운 할 일을 입력하세요." />
-        <button>추가</button>
-      </section>
-      <section className="list-section">
+      <panel>
+        <div className="input-section">
+          <input type="text" placeholder="새로운 할 일을 입력하세요." />
+          <button>추가</button>
+        </div>
+      </panel>
+      <panel>
         {todos.length === 0 ? (
           <p no-todos>할 일이 없습니다.</p>
         ) : (
           <ul className="todo-list">
-            {todos.map((text, index) => {
-              <TodoItem key={index} text={text} />;
-            })}
+            {todos.map((text, index) => (
+              <TodoItem key={index} text={text} />
+            ))}
           </ul>
         )}
-      </section>
+      </panel>
     </div>
   );
 }
