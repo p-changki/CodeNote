@@ -1,5 +1,7 @@
 import "./App.css";
 import { useState } from "react";
+import { TodoItem } from "./components/TodoItem/TodoItem";
+import { Panel } from "./components/Panel/Panel";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -20,6 +22,10 @@ function App() {
     }
   };
 
+  const hadleDelete = (text) => {
+    setTodos((prev) => prev.filter((todo) => todo !== text));
+  };
+
   return (
     <div className="container">
       <div className="titleWrap">
@@ -28,32 +34,36 @@ function App() {
           오늘은 {new Date().toLocaleDateString()} 입니다.
         </p>
       </div>
-      <section className="inputSection">
-        <input
-          className="inputText"
-          type="text"
-          placeholder="여기에 적으세요!"
-          value={inputText}
-          onChange={(e) => {
-            setInputText(e.target.value);
-          }}
-          onKeyDown={handleKeyDown}
-        ></input>
-        <button className="inputBtn" onClick={handleAddTodo}>
-          확인
-        </button>
-      </section>
-      <section className="todoSection">
-        {todos.length === 0 ? (
-          <p> 투두리스트를 입력한게 들어와요!</p>
-        ) : (
-          <ul className="todoList">
-            {todos.map((todo, index) => (
-              <li key={index}>{todo}</li>
-            ))}
-          </ul>
-        )}
-      </section>
+      <Panel>
+        <div className="inputSection">
+          <input
+            className="inputText"
+            type="text"
+            placeholder="여기에 적으세요!"
+            value={inputText}
+            onChange={(e) => {
+              setInputText(e.target.value);
+            }}
+            onKeyDown={handleKeyDown}
+          ></input>
+          <button className="inputBtn" onClick={handleAddTodo}>
+            확인
+          </button>
+        </div>
+      </Panel>
+      <Panel>
+        <div className="todoSection">
+          {todos.length === 0 ? (
+            <p> 투두리스트를 입력한게 들어와요!</p>
+          ) : (
+            <ul className="todoList">
+              {todos.map((todo, index) => (
+                <TodoItem key={index} text={todo} onDelete={hadleDelete} />
+              ))}
+            </ul>
+          )}
+        </div>
+      </Panel>
     </div>
   );
 }
