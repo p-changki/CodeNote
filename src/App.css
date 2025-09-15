@@ -1,0 +1,55 @@
+.container {
+  max-width: 600;
+  margin: 60px auto;
+  padding: 60px 40px;
+  background-color: yellow;
+  border-radius: 15px;
+}
+
+.titleWrap {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.titleWrap h1 {
+  text-align: center;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.today p {
+  font-size: 15px;
+}
+
+.inputSection {
+  display: flex;
+  gap: 20px;
+}
+
+.inputSection input {
+  flex-grow: 1;
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.inputSection button {
+  background-color: black;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+.todoSection {
+  padding-top: 40px;
+}
+.todoSection p {
+  text-align: center;
+  font-size: 15px;
+}
+
+.todoList {
+  list-style: none;
+  padding: 0;
+}
