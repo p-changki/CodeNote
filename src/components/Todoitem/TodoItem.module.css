@@ -13,7 +13,7 @@
   /* 드래그 하이라이팅 방지 */
   &.done {
     text-decoration: line-through;
-    color: #adb5bd;
+    color: red;
   }
 }
 
