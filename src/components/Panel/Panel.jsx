@@ -1,5 +1,5 @@
-import "./Panel.css";
+import style from "./Panel.module.css";
 
 export function Panel({ children }) {
-  return <section className="panel">{children}</section>;
+  return <section className={style.panel}>{children}</section>;
 }
