@@ -9,6 +9,11 @@
   flex-grow: 1;
   cursor: pointer;
   user-select: none;
+
+  &.done {
+    text-decoration: line-through;
+    color: #adb5bd;
+  }
 }
 
 .todoItem button {
@@ -17,4 +22,12 @@
   cursor: pointer;
   padding: 5px 10px;
   border-radius: 4px;
+  &:hover {
+    background-color: #f8f9fa;
+  }
+}
+
+.todoItem .done {
+  text-decoration: line-through;
+  color: gray;
 }

@@ -1,14 +1,20 @@
 import "./index.css";
 import { FaRegTrashAlt } from "react-icons/fa";
 
-export function TodoItem({ text, onDelete }) {
+export function TodoItem({ todo, onDelete, onToggle }) {
   return (
     <li className="todoItem">
-      {text}
+      <span
+        className={todo.isDone ? "done" : ""}
+        onClick={() => onToggle(todo.id)}
+      >
+        {todo.text}
+      </span>
+
       <button
         className="deleteBtn"
         onClick={() => {
-          onDelete(text);
+          onDelete(todo.id);
         }}
       >
         <FaRegTrashAlt />

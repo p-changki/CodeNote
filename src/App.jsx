@@ -1,16 +1,23 @@
 import "./App.css";
 import { useState } from "react";
-import { TodoItem } from "./components/TodoItem/TodoItem";
-import { Panel } from "./components/Panel/Panel";
+import { TodoItem } from "./components/TodoItem";
+import { Panel } from "./components/Panel";
+import { nanoid } from "nanoid";
 
 function App() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState([
+    { id: nanoid(), text: "리엑트 공부하기", isdone: false },
+    { id: nanoid(), text: "운동하기", isDone: true },
+  ]);
   const [inputText, setInputText] = useState("");
 
   const handleAddTodo = () => {
     if (inputText.trim() === "") return;
-    setTodos((prev) => [...prev, inputText]);
-    console.log("입력");
+    setTodos((prev) => [
+      ...prev,
+      { id: nanoid(), text: inputText.trim(), isDone: false },
+    ]);
+
     setInputText("");
   };
 
@@ -22,8 +29,16 @@ function App() {
     }
   };
 
-  const hadleDelete = (text) => {
-    setTodos((prev) => prev.filter((todo) => todo !== text));
+  const handleDelete = (id) => {
+    setTodos((prev) => prev.filter((todo) => todo.id !== id));
+  };
+
+  const handleToggle = (id) => {
+    setTodos((prev) =>
+      prev.map((todo) =>
+        todo.id === id ? { ...todo, isDone: !todo.isDone } : todo
+      )
+    );
   };
 
   return (
@@ -57,8 +72,13 @@ function App() {
             <p> 투두리스트를 입력한게 들어와요!</p>
           ) : (
             <ul className="todoList">
-              {todos.map((todo, index) => (
-                <TodoItem key={index} text={todo} onDelete={hadleDelete} />
+              {todos.map((todo) => (
+                <TodoItem
+                  key={todo.id}
+                  todo={todo}
+                  onDelete={handleDelete}
+                  onToggle={handleToggle}
+                />
               ))}
             </ul>
           )}
