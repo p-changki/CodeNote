@@ -7,3 +7,4 @@
 프로젝트 폴더로 들어가서:
   npm install
   npm run dev
+- 2025-09-17 - todolist v2 → ./2025-09-17-todolist-v2
