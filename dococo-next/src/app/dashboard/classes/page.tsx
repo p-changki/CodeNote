@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { BookOpen, Users, FileText, GraduationCap, Settings } from "lucide-react"
+import { FileText, Settings } from "lucide-react"
 
 type ClassInfo = {
   id: string

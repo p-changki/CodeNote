@@ -2,11 +2,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Download, Pencil } from "lucide-react"
 
-type Props = {
-  params: { id: string }
-}
+// type Props = {
+//   params: { id: string }
+// }
 
-export default function StudentDetailPage({ params }: Props) {
+export default function StudentDetailPage() {
   // 실제로는 params.id를 이용해 DB에서 학생 데이터 fetch
   const student = {
     name: "홍길동",
