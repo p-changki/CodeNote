@@ -1,0 +1,44 @@
+.Wrap {
+  max-width: 600;
+  padding: 60px 40px;
+  margin: 40px 60px;
+  background-color: yellow;
+}
+
+.titleWrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.titleWrap h1 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.titleWrap p {
+  font-size: 15px;
+}
+
+.inputWrap {
+  display: flex;
+  gap: 10px;
+  padding-bottom: 40px;
+}
+
+.inputWrap input {
+  flex-grow: 1;
+  height: 30px;
+}
+
+.inputWrap button {
+  background-color: blue;
+  color: aliceblue;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.todoListWrap {
+  font-size: 15px;
+  font-weight: 500;
+}
