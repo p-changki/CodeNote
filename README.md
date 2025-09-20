@@ -5,3 +5,4 @@
 
 - 2025-09-17 - todolist v2 → ./2025-09-17-todolist-v2
 - 2025-09-17 - todolist → ./2025-09-17-todolist
+- 2025-09-20 - todolist -> delet buttom fix
