@@ -1,0 +1,21 @@
+.listTodo {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.todoList {
+  display: block;
+  background-color: antiquewhite;
+  padding: 20px 20px;
+}
+
+.listTodo button {
+  background-color: blue;
+  border: 1px solid;
+  border-radius: 8px;
+  color: white;
+  padding: 5px 5px;
+  margin: 5px 5px;
+}
