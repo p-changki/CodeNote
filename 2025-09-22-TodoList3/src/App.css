@@ -1,0 +1,35 @@
+.titleWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main {
+  background-color: yellow;
+  padding: 20px 20px;
+  margin: 30px 20px;
+}
+
+.inputWrap {
+  display: flex;
+  gap: 20px;
+}
+
+.inputWrap input {
+  display: flex;
+  flex-grow: 1;
+  padding: 8px;
+  border: 1px solid;
+  border-radius: 8px;
+}
+
+.inputWrap button {
+  background-color: blue;
+  color: white;
+  border: 1px solid;
+  border-radius: 8px;
+}
+
+.footerTodo {
+  padding-top: 20px;
+}
