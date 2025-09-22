@@ -1,35 +1,40 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import style from "./App.module.css";
+
+const initialUsers = [
+  { id: "u3", name: "박노드", email: "parknode@example.com" },
+  { id: "u1", name: "김코딩", email: "kimcoding@example.com" },
+  { id: "u2", name: "이해커", email: "leehacker@example.com" },
+];
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [users, setUsers] = useState(initialUsers);
+
+  const handleSortByName = () => {
+    setUsers((prev) => prev.toSorted((a, b) => a.name.localeCompare(b.name)));
+  };
+
+  const handleDelete = (userId) => {
+    setUsers((prev) => prev.filter((user) => user.id !== userId));
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className={style.appContainer}>
+      <h1>유저목록</h1>
+      <button onClick={handleSortByName}>이름 순 정렬</button>
+      <ul className={style.userList}>
+        {users.map((user) => (
+          <li key={user.id} className={style.userItem}>
+            <div>
+              <strong>{user.name}</strong>
+              <span>({user.email})</span>
+            </div>
+            <button onClick={() => handleDelete(user.id)}>삭제</button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
 
-export default App
+export default App;
