@@ -35,6 +35,12 @@ function App() {
     setTodos((prev) => prev.filter((t) => t.id !== id));
   };
 
+  const handleToggle = (id) => {
+    setTodos((prev) =>
+      prev.map((t) => (t.id === id ? { ...t, isDone: !t.isDone } : t))
+    );
+  };
+
   return (
     <>
       <div className="main">
@@ -58,8 +64,19 @@ function App() {
           <h2>투두리스트</h2>
           <ul className="todoList">
             {todos.map((todo) => (
-              <li key={todo.id}>
-                {todo.text}{" "}
+              <li key={todo.id} className={todo.isDone ? "done" : ""}>
+                <span
+                  className="todoText"
+                  role="button"
+                  onClick={() => handleToggle(todo.id)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === "")
+                      handleToggle(todo.id);
+                  }}
+                >
+                  {todo.text}{" "}
+                </span>
+
                 <button type="button" onClick={() => handleDelete(todo.id)}>
                   X
                 </button>
