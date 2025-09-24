@@ -1,6 +1,8 @@
-import "./App.css";
+import { Page } from "./components/Page";
 
 function App() {
-  return <>하이</>;
+  
+  return <Page />;
 }
+
 export default App;
