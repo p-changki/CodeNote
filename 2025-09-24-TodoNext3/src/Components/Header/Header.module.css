@@ -1,0 +1,30 @@
+.HeaderWrap {
+  background-color: antiquewhite;
+  max-width: 1200px;
+  padding: 20px 30px;
+  margin: 20px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid;
+  border-radius: 8px;
+}
+
+.toggleButton {
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 24px; /* 아이콘 크기를 위해 폰트 사이즈 조절 */
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
+}
+
+.actionsContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
