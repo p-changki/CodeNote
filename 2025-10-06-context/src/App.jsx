@@ -1,5 +1,7 @@
+import { Page } from "./components/Page";
+
 function App() {
-  return <div>ㅗ</div>;
+  return <Page />;
 }
 
 export default App;
