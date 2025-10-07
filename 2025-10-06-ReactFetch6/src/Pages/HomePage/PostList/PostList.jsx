@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './PostList.module.css';
 import { Spinner } from '@/components/Spinner';
-import { PostCard } from '@/pages/HomePage/components/PostCard';
+import { PostCard } from '@/Pages/HomePage/PostCard';
 import { Pagination } from '@/components/Pagination';
 import { usePosts } from '@/contexts/PostContext';
 
